@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "dev.arie.gravity"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.1.0"
+    }
+
+    packagingOptions {
+        excludes += "/META-INF/AL2.0"
+        excludes += "/META-INF/LGPL2.1"
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0-alpha05'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3'
+
+    // Lottie
+    implementation "com.airbnb.android:lottie-compose:5.2.0"
+
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-pager:0.23.1"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.23.1"
+
+    // Compose
+    implementation 'androidx.compose.ui:ui:1.1.1'
+
+    // Runtime
+    implementation "androidx.compose.runtime:runtime:1.1.1"
+    implementation 'androidx.compose.runtime:runtime-rxjava3:1.1.1'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.1.1'
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    implementation 'androidx.compose.foundation:foundation:1.1.1'
+    // Material Design
+    implementation 'androidx.compose.material:material:1.1.1'
+    // Material design icons
+    implementation 'androidx.compose.material:material-icons-core:1.1.1'
+    implementation 'androidx.compose.material:material-icons-extended:1.1.1'
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.5.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
+}
